@@ -49,7 +49,12 @@ export class FormFestivalComponent implements OnInit {
         .pipe(take(1))
         .subscribe({
           next: (festival: IFestivals | undefined) => {
-            if (festival) this.festivalForm.patchValue(festival);
+            if (festival) {
+              const dataArtist = festival.artists.map((a) => {
+                return this.artistsService.getArtistById(a);
+              });
+              this.festivalForm.patchValue({ ...festival, artists: dataArtist });
+            }
             this.loadingService.loading$.next(false);
           },
           error: () => {

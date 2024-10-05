@@ -18,9 +18,9 @@ export class ArtistsService {
     return of(ARTISTS_MOCK);
     //return this.http.get<IArtist[]>(`${this.url}${this.path}`);
   }
-  getArtistById(id: string): Observable<IArtist | undefined> {
-    const item = ARTISTS_MOCK.find((e) => e.id == id);
-    return of(item);
+  getArtistById(id: string): IArtist | undefined {
+    console.log(id);
+    return ARTISTS_MOCK.find((e) => e.id == id);
     //return this.http.get<IArtist[]>(`${this.url}${this.path}`);
   }
 }
