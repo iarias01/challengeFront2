@@ -11,7 +11,10 @@
           <li *ngFor="let artist of artists">{{ artist.name }} - {{ artist.music }}</li>
         </ul>
       </section>
-      <p-button class="btn-edit" label="Editar" (click)="edit()"></p-button>
+      <div class="actions">
+        <p-button label="Cancelar" routerLink="/home" styleClass="p-button-secondary"></p-button>
+        <p-button class="btn-edit" label="Editar" (click)="edit()"></p-button>
+      </div>
     </p-card>
   </div>
 </div>
