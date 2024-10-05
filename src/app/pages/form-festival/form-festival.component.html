@@ -22,48 +22,40 @@
             Campo requerido
           </div>
         </div>
+        <div class="form-festival__field">
+          <label for="artists" class="form-festival__label">Artists</label>
+          <p-multiSelect
+            [options]="artists"
+            formControlName="artists"
+            optionLabel="name"
+            id="artists"
+            class="form-festival__input"
+            placeholder="Seleccione artistas"
+          ></p-multiSelect>
+        </div>
         <section class="double">
-          <div class="form">
-            <div class="form-festival__field">
-              <label for="artists" class="form-festival__label">Artists</label>
-              <p-multiSelect
-                [options]="artists"
-                formControlName="artists"
-                optionLabel="name"
-                id="artists"
-                class="form-festival__input"
-                placeholder="Seleccione artistas"
-              ></p-multiSelect>
-            </div>
-
-            <div class="form-festival__field">
-              <label for="date" class="form-festival__label">Fecha</label>
-              <p-calendar
-                formControlName="date"
-                id="date"
-                dateFormat="yy-mm-dd"
-                class="form-festival__input"
-                placeholder="aaaa-mm-dd"
-              ></p-calendar>
-            </div>
+          <div class="form-festival__field">
+            <label for="date" class="form-festival__label">Fecha</label>
+            <p-calendar
+              formControlName="date"
+              id="date"
+              dateFormat="yy-mm-dd"
+              class="form-festival__input"
+              placeholder="aaaa-mm-dd"
+            ></p-calendar>
           </div>
-          <div class="artists">
-            <ul>
-              <li *ngFor="let artist of getArtist">{{ artist.name }} - {{ artist.music }}</li>
-            </ul>
+
+          <div class="form-festival__field">
+            <label for="time" class="form-festival__label">Hora</label>
+            <p-inputMask
+              formControlName="time"
+              id="time"
+              mask="99:99"
+              placeholder="hh:mm"
+              class="form-festival__input"
+            ></p-inputMask>
           </div>
         </section>
-
-        <div class="form-festival__field">
-          <label for="time" class="form-festival__label">Hora</label>
-          <p-inputMask
-            formControlName="time"
-            id="time"
-            mask="99:99"
-            placeholder="hh:mm"
-            class="form-festival__input"
-          ></p-inputMask>
-        </div>
 
         <div class="form-festival__field">
           <label for="city" class="form-festival__label">Ciudad</label>
