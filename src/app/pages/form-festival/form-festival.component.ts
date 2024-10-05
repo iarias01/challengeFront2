@@ -29,7 +29,6 @@ export class FormFestivalComponent implements OnInit {
   ) {
     this.artistsService.artist$.subscribe((data) => {
       this.artists = data;
-      console.log(data);
     });
     this.festivalForm = this.fb.group({
       name: ['', Validators.required],

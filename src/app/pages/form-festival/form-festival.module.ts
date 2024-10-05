@@ -8,6 +8,7 @@ import { PanelModule } from 'primeng/panel';
 import { FormFestivalRoutingModule } from './form-festival-routing.module';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputMaskModule } from 'primeng/inputmask';
 
 @NgModule({
   declarations: [FormFestivalComponent],
@@ -20,6 +21,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     PanelModule,
     InputTextModule,
     InputTextareaModule,
+    InputMaskModule,
   ],
 })
 export class FormFestivalModule {}
