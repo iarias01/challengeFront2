@@ -18,6 +18,7 @@ import { ArtistsService } from '../../services/artists/artists.service';
 export class FormFestivalComponent implements OnInit {
   public festivalForm: FormGroup;
   public artists: IArtist[] = [];
+  public festivalId = '';
 
   constructor(
     private fb: FormBuilder,
@@ -41,11 +42,11 @@ export class FormFestivalComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const festivalId = this.route.snapshot.paramMap.get('id');
-    if (festivalId) {
+    this.festivalId = this.route.snapshot.paramMap.get('id') as string;
+    if (this.festivalId) {
       this.loadingService.loading$.next(true);
       this.festivalsService
-        .getFestivalById(festivalId)
+        .getFestivalById(this.festivalId)
         .pipe(take(1))
         .subscribe({
           next: (festival: IFestivals | undefined) => {
