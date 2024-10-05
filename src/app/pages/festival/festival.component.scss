@@ -1,6 +1,16 @@
+@import '../../../styles.scss';
+
 .festival-card {
-  max-width: 500px;
+  max-width: 500px !important;
   margin: auto;
+}
+
+.btn-edit {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .artists-list {
@@ -16,7 +26,7 @@
     padding-left: 0;
 
     li {
-      background-color: #e0e0e0;
+      background-color: $color-blue;
       padding: 0.5rem;
       margin-bottom: 0.5rem;
       border-radius: 5px;

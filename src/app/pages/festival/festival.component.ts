@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { take } from 'rxjs';
 import { AlertService } from 'src/app/services/alert/alert.service';
 import { ArtistsService } from 'src/app/services/artists/artists.service';
@@ -17,9 +17,11 @@ import { IFestivals } from 'src/app/shared/utils/festivals.interface';
 export class FestivalComponent implements OnInit {
   public festival: IFestivals | undefined = undefined;
   public artists: IArtist[] = [];
+  private id = '';
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private festivalsService: FestivalsService,
     private artistsService: ArtistsService,
     private loadingService: LoadingService,
@@ -31,9 +33,9 @@ export class FestivalComponent implements OnInit {
   }
 
   getFestival() {
-    const id = this.route.snapshot.paramMap.get('id');
+    this.id = this.route.snapshot.paramMap.get('id') as string;
     this.festivalsService
-      .getFestivalById(id as string)
+      .getFestivalById(this.id)
       .pipe(take(1))
       .subscribe({
         next: (data: IFestivals | undefined) => {
@@ -54,5 +56,8 @@ export class FestivalComponent implements OnInit {
           this.loadingService.loading$.next(false);
         },
       });
+  }
+  edit() {
+    this.router.navigateByUrl('/festival/form/' + this.id);
   }
 }

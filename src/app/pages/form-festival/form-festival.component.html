@@ -1,89 +1,102 @@
-<div class="form-festival">
-  <h1>entraaaaa</h1>
-  <p-panel header="Festival Details" class="form-festival__panel">
-    <form [formGroup]="festivalForm" (ngSubmit)="onSubmit()" class="form-festival__form">
-      <div class="form-festival__field">
-        <label for="name" class="form-festival__label">Name</label>
-        <input
-          id="name"
-          type="text"
-          pInputText
-          formControlName="name"
-          class="form-festival__input"
-          [ngClass]="{
-            'is-invalid': festivalForm.get('name')?.invalid && festivalForm.get('name')?.touched
-          }"
-        />
-        <div
-          *ngIf="festivalForm.get('name')?.invalid && festivalForm.get('name')?.touched"
-          class="form-error"
-        >
-          Name is required
+<div class="container">
+  <div class="form-festival">
+    <p-panel header="Festival Details" class="form-festival__panel">
+      <form [formGroup]="festivalForm" (ngSubmit)="onSubmit()" class="form-festival__form">
+        <div class="form-festival__field">
+          <label for="name" class="form-festival__label">Name</label>
+          <input
+            id="name"
+            type="text"
+            pInputText
+            formControlName="name"
+            class="form-festival__input"
+            [ngClass]="{
+              'is-invalid': festivalForm.get('name')?.invalid && festivalForm.get('name')?.touched
+            }"
+          />
+          <div
+            *ngIf="festivalForm.get('name')?.invalid && festivalForm.get('name')?.touched"
+            class="form-error"
+          >
+            Name is required
+          </div>
         </div>
-      </div>
+        <section class="double">
+          <div class="form">
+            <div class="form-festival__field">
+              <label for="artists" class="form-festival__label">Artists</label>
+              <p-multiSelect
+                [options]="artists"
+                formControlName="artists"
+                optionLabel="name"
+                id="artists"
+                class="form-festival__input"
+              ></p-multiSelect>
+            </div>
 
-      <div class="form-festival__field">
-        <label for="artists" class="form-festival__label">Artists</label>
-        <p-multiSelect
-          [options]="artists"
-          formControlName="artists"
-          id="artists"
-          class="form-festival__input"
-        ></p-multiSelect>
-      </div>
+            <div class="form-festival__field">
+              <label for="date" class="form-festival__label">Date</label>
+              <p-calendar
+                formControlName="date"
+                id="date"
+                dateFormat="yy-mm-dd"
+                class="form-festival__input"
+              ></p-calendar>
+            </div>
+          </div>
+          <div class="artists">
+            <ul>
+              <li *ngFor="let artist of getArtist">{{ artist.name }} - {{ artist.music }}</li>
+            </ul>
+          </div>
+        </section>
 
-      <div class="form-festival__field">
-        <label for="date" class="form-festival__label">Date</label>
-        <p-calendar
-          formControlName="date"
-          id="date"
-          dateFormat="yy-mm-dd"
-          class="form-festival__input"
-        ></p-calendar>
-      </div>
+        <div class="form-festival__field">
+          <label for="time" class="form-festival__label">Time</label>
+          <p-inputMask
+            formControlName="time"
+            id="time"
+            mask="99:99"
+            placeholder="hh:mm"
+            class="form-festival__input"
+          ></p-inputMask>
+        </div>
 
-      <div class="form-festival__field">
-        <label for="time" class="form-festival__label">Time</label>
-        <p-inputMask
-          formControlName="time"
-          id="time"
-          mask="99:99"
-          placeholder="hh:mm"
-          class="form-festival__input"
-        ></p-inputMask>
-      </div>
+        <div class="form-festival__field">
+          <label for="city" class="form-festival__label">City</label>
+          <input
+            id="city"
+            type="text"
+            pInputText
+            formControlName="city"
+            class="form-festival__input"
+          />
+        </div>
 
-      <div class="form-festival__field">
-        <label for="city" class="form-festival__label">City</label>
-        <input
-          id="city"
-          type="text"
-          pInputText
-          formControlName="city"
-          class="form-festival__input"
-        />
-      </div>
+        <div class="form-festival__field">
+          <label for="description" class="form-festival__label">Description</label>
+          <textarea
+            id="description"
+            pInputTextarea
+            formControlName="description"
+            rows="3"
+            class="form-festival__input"
+          ></textarea>
+        </div>
 
-      <div class="form-festival__field">
-        <label for="description" class="form-festival__label">Description</label>
-        <textarea
-          id="description"
-          pInputTextarea
-          formControlName="description"
-          rows="3"
-          class="form-festival__input"
-        ></textarea>
-      </div>
+        <div class="form-festival__actions">
+          <p-button label="Cancelar" routerLink="/home" styleClass="p-button-secondary"></p-button>
+          <p-button label="Eliminar" styleClass="p-button-danger"></p-button>
 
-      <div class="form-festival__actions">
-        <button
-          type="submit"
-          pButton
-          label="Save"
-          [disabled]="festivalForm.invalid"
-          class="form-festival__button"
-        ></button>
-      </div>
-    </form>
-  </p-panel>
+          <button
+            type="submit"
+            pButton
+            label="Guardar"
+            [disabled]="festivalForm.invalid"
+            class="form-festival__button"
+          ></button>
+        </div>
+      </form>
+    </p-panel>
+  </div>
 </div>

@@ -6,6 +6,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PanelModule } from 'primeng/panel';
 import { FormFestivalRoutingModule } from './form-festival-routing.module';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [FormFestivalComponent],
@@ -16,6 +18,8 @@ import { FormFestivalRoutingModule } from './form-festival-routing.module';
     MultiSelectModule,
     ReactiveFormsModule,
     PanelModule,
+    InputTextModule,
+    InputTextareaModule,
   ],
 })
 export class FormFestivalModule {}

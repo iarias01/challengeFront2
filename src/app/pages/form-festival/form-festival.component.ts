@@ -29,11 +29,12 @@ export class FormFestivalComponent implements OnInit {
   ) {
     this.artistsService.artist$.subscribe((data) => {
       this.artists = data;
+      console.log(data);
     });
     this.festivalForm = this.fb.group({
       name: ['', Validators.required],
       date: ['', Validators.required],
-      time: ['', Validators.required],
+      time: [''],
       city: ['', Validators.required],
       description: [''],
       artists: [[], Validators.required],
@@ -64,6 +65,7 @@ export class FormFestivalComponent implements OnInit {
   }
 
   onSubmit(): void {
+    console.log(this.festivalForm.value);
     if (this.festivalForm.valid) {
       this.loadingService.loading$.next(true);
       const festivalData: IFestivals = this.festivalForm.value;
@@ -87,5 +89,9 @@ export class FormFestivalComponent implements OnInit {
           },
         });
     }
+  }
+
+  get getArtist() {
+    return this.festivalForm?.get('artists')?.value ?? [];
   }
 }

@@ -1,27 +1,55 @@
-.festival-form {
+@import '../../../styles.scss';
+
+.form-festival {
+  max-width: 600px;
+  margin: auto;
   &__title {
     font-size: 1.8rem;
     margin-bottom: 1rem;
   }
-
-  &__group {
-    margin-bottom: 1rem;
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
   }
-
-  &__label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
+  &__actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
   }
+}
+input,
+.form-festival__input,
+textarea {
+  width: 100% !important;
+}
 
-  &__input,
-  &__textarea,
-  &__multiselect {
-    width: 100%;
+ul {
+  list-style-type: none;
+  padding-left: 0;
+
+  li {
+    background-color: $color-blue;
     padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
   }
+}
 
-  &__button {
-    margin-top: 1rem;
+.double {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  .artists,
+  form {
+    width: calc(50% - 5px);
+    * {
+      width: 100%;
+    }
   }
+}
+
+.cancel {
+  margin: auto;
 }
