@@ -1,0 +1,25 @@
+.festival-card {
+  max-width: 500px;
+  margin: auto;
+}
+
+.artists-list {
+  margin-top: 1rem;
+
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      background-color: #e0e0e0;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+      border-radius: 5px;
+    }
+  }
+}

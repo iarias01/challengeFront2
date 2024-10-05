@@ -1,0 +1,39 @@
+<div class="container">
+  <section class="table">
+    <p-table
+      *ngIf="!loadingService.loading$.value && festivals.length > 0"
+      [value]="festivals"
+      [paginator]="true"
+      [rows]="5"
+      [showCurrentPageReport]="true"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      currentPageReportTemplate="{last} de {totalRecords} Festivales"
+      [rowsPerPageOptions]="[5, 10]"
+    >
+      <ng-template pTemplate="header">
+        <tr class="table-header">
+          <th>Festival</th>
+          <th>Fecha</th>
+          <th>Ciudad</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-event>
+        <tr class="table-row" (click)="viewFestival(event.id)">
+          <td>{{ event.name }}</td>
+          <td>{{ event.date }}</td>
+          <td>{{ event.city }}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="paginatorleft">
+        <p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+      </ng-template>
+      <ng-template pTemplate="paginatorright">
+        <p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+      </ng-template>
+    </p-table>
+    <p *ngIf="!loadingService.loading$.value && festivals.length === 0">
+      No hay festivales registrados
+    </p>
+    <p *ngIf="loadingService.loading$.value">Cargando...</p>
+  </section>
+</div>

@@ -1,0 +1,28 @@
+@import '../../../styles.scss';
+
+.table {
+  max-width: 1360px;
+  margin: auto;
+}
+
+.table-header {
+  * {
+    background: $color-primary;
+    color: $color-white;
+  }
+}
+.table-row {
+  cursor: pointer;
+  * {
+    transition: background-color 0.3s;
+  }
+  &:hover {
+    * {
+      background: $color-black-secondary;
+      color: $color-white;
+    }
+  }
+}
+
+@media screen and (max-width: $breackpoint-cel) {
+}

@@ -1,0 +1,27 @@
+.festival-form {
+  &__title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  &__group {
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  &__input,
+  &__textarea,
+  &__multiselect {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  &__button {
+    margin-top: 1rem;
+  }
+}

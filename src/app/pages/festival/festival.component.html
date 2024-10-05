@@ -1,0 +1,14 @@
+<div class="container">
+  <p-card class="festival-card" *ngIf="festival" header="{{ festival.name }}">
+    <p><strong>Fecha:</strong> {{ festival.date }} a las {{ festival.time }}</p>
+    <p><strong>Ciudad:</strong> {{ festival.city }}</p>
+    <p><strong>Descripción:</strong> {{ festival.description }}</p>
+
+    <section class="artists-list">
+      <h3>Artistas:</h3>
+      <ul>
+        <li *ngFor="let artist of artists">{{ artist.name }} - {{ artist.music }}</li>
+      </ul>
+    </section>
+  </p-card>
+</div>
