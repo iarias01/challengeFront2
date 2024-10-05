@@ -16,7 +16,7 @@ export const FESTIVALS_MOCK: IFestivals[] = [
     artists: ['artist3', 'artist4'],
     date: '2024-10-02',
     time: '19:00',
-    city: 'Córdoba',
+    city: 'Cordoba',
     description: 'Jazz and Classical Night',
   },
   {
@@ -88,7 +88,7 @@ export const FESTIVALS_MOCK: IFestivals[] = [
     artists: ['artist4', 'artist3'],
     date: '2024-10-10',
     time: '22:00',
-    city: 'Tucumán',
+    city: 'Tucuman',
     description: 'Classical and Jazz Evening',
   },
   {
@@ -97,7 +97,7 @@ export const FESTIVALS_MOCK: IFestivals[] = [
     artists: ['artist1', 'artist5'],
     date: '2024-10-11',
     time: '18:00',
-    city: 'Neuquén',
+    city: 'Neuquen',
     description: 'Rock and Hip Hop Festival',
   },
   {
@@ -115,7 +115,7 @@ export const FESTIVALS_MOCK: IFestivals[] = [
     artists: ['artist3', 'artist5'],
     date: '2024-10-13',
     time: '20:00',
-    city: 'Río Gallegos',
+    city: 'Rio Gallegos',
     description: 'Jazz and Hip Hop Night',
   },
   {

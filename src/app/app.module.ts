@@ -10,7 +10,6 @@ import { HeaderModule } from './shared/components/header/header.module';
 import { AlertModule } from './shared/components/alert/alert.module';
 import { LoadingModule } from './shared/components/loading/loading.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
